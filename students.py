@@ -1,8 +1,9 @@
 # filter out active students from people.json
 
 import json
+from itertools import chain
 
-f = open('people.json')
+f = open('out/people.json')
 s = f.read()
 f.close()
 people = json.loads(s)
@@ -33,3 +34,7 @@ for person in people:
 print()
 for year in students.keys():
   print(f'Class of {year}: {len(students[year])} entries')
+
+f = open('out/students.txt', 'w')
+emails = (student.get('email') for student in chain(*students.values()))
+f.write('\n'.join(emails))

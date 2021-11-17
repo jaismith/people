@@ -41,6 +41,6 @@ def get_all_people() -> list:
   return people
 
 people = get_all_people()
-f = open('people.json', 'w')
+f = open('out/people.json', 'w')
 f.write(json.dumps(people))
 f.close()
