@@ -13,7 +13,8 @@ students = {
   '22': [],
   '23': [],
   '24': [],
-  '25': []
+  '25': [],
+  'UG': [],
 }
 
 print('0/0', end='\r')
@@ -28,7 +29,7 @@ for person in people:
 
   year = email.split('@')[0].split('.')[-1]
 
-  if year.isnumeric() and year in students.keys():
+  if year in students.keys():
     students[year].append(person)
 
 print()
